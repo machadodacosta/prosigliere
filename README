@@ -1,25 +1,16 @@
-
-
-dotnet ef migrations add ProsigliereDb
-
-dotnet ef database update --project ../Prosigliere.Test.ORM --startup-project ../Prosigliere.Test.WebApi
-
-dotnet ef database update --project ../Prosigliere.Test.ORM --startup-project ../Prosigliere.Test.WebApi
-
-
 ### Visual Studio Code
 1. Open a terminal in the root directory, where the docker-compose.yml file is located, run the command below:
    - docker compose up --build
 2. After running the containers:
-3. Open a terminal in the directory "\Prosigliere.Test.WebApi", run the Migration command below:
-   - dotnet ef database update - error here
+3. Open a terminal in the directory "\Prosigliere.Challenge.WebApi", run the Migration command below:
+   - dotnet ef database update
 4. Assuming the containers and migration are ok, open the API with Swagger at the URL below:
    - https://localhost:5001/swagger/index.html
 
 ### Visual Studio
 1. Open the solution with Docker Compose support and wait for the containers to be running.
 2. After running the containers:
-3. Open a terminal in the directory "\Prosigliere.Test.WebApi", run the Migration command below:
+3. Open a terminal in the directory "\Prosigliere.Challenge.WebApi", run the Migration command below:
    - dotnet ef database update
 4. Assuming the containers and migration are ok, click on the VS start button to run the application in Debug mode, the browser will open the API with Swagger at the URL below:
    - https://localhost:5001/swagger/index.html
