@@ -1,0 +1,22 @@
+services:
+  prosigliere.test.webapi:
+    container_name: prosigliere.challenge.webapi
+    image: ${DOCKER_REGISTRY-}prosiglieretestwebapi
+    build:
+      context: .
+      dockerfile: Prosigliere.Challenge.WebApi/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001" 
+  prosigliere.test.database:
+    image: postgres:latest
+    container_name: prosigliere.challenge.database
+    environment:
+      - POSTGRES_DB=prosigliere
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/prosigliere-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  
